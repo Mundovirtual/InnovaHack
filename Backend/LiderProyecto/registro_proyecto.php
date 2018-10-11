@@ -16,15 +16,11 @@
 		<h3 class="card-header primary-color bg-dark text-white"><i class="fas fa-plus-circle"></i> Registro proyecto</h3>
 		<div class="card-body">
 		<form method="POST" id="proyecto">
-			<div class="row">
-				<div class="col-md-6">
-					<label for="#" class="label-control">Equipo</label>
+			<div class="form-group">
+				 
+					<label for="#" class="label-control">Nombre del Equipo</label>
 				    <input type="text" class="form-control" name="equipo" id="equipo">
-				</div>
-				<div class="col-md-6">
-					<label for="#" class="label-control">Eslogan</label>
-				    <input type="text" class="form-control" name="eslogan">
-				</div>
+				 
 			</div>
 			<div class="form-group">
 				    <label for="#" class="label-control">Nombre Proyecto</label>
@@ -44,13 +40,14 @@
 						<?php
 						    require_once '../../conexion/abrirconexion.php';
 						    $conexion = new Conexion();
-						    $sql = "SELECT `id`, `Nombre`, `Descripcion`, `InfAsesoria`, `HackatonEdicion_id` FROM `vertical` WHERE 1"; 
+						    $sql = "SELECT `vertical`.`id`, `vertical`.`Nombre`, `vertical`.`Descripcion`, `vertical`.`InfAsesoria`, `vertical`.`HackatonEdicion_id` FROM `vertical` inner join `hackatonedicion` on `hackatonedicion`.`id`=`vertical`.`HackatonEdicion_id`  WHERE `hackatonedicion`.`status`='1'"; 
 						    $resultado = $conexion->query($sql);
 						    while($row = mysqli_fetch_array($resultado)){
 						    	?>
 						    	<option value="<?php echo $row['id']; ?>"><?php echo utf8_encode($row['Nombre']) ?></option>
 						    	<?php
 						    }
+
 
 						 ?>
 					</select>
