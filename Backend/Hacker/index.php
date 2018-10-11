@@ -1,8 +1,10 @@
 <?php include_once("../iniciosesion/seguridad.php");
 include_once("../../Backend/enrutador.php");
+
 if(!isset($_GET['cargar'])){
   $_GET['cargar'] = "";
 }
+
 ?>
 <!DOCTYPE html>
 <html>

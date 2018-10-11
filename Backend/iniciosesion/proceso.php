@@ -46,20 +46,21 @@
     function busqueda($u,$c){
     	require_once '../../conexion/abrirconexion.php';
     	$con = new Conexion();
-    	$contenido = $con->query("SELECT `Nombre`,`Apellidos`,`E-mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `E-mail`='$u' and `psw` = '$c'");
+    	$contenido = $con->query("SELECT `id`,`Nombre`,`Apellidos`,`E-mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `E-mail`='$u' and `psw` = '$c'");
 
       while($row = mysqli_fetch_array($contenido)) { 
-        $Id = $row['id'];
+         
         $nombre = $row['Nombre'];
         $apellidos = $row['Apellidos'];
         $correo = $row['E-mail'];
         $cel = $row['Celular'];
         $Rol = $row['Rol_idRol'];
+        
       }
-    	if($contenido->num_rows > 0){
+      	if($contenido->num_rows > 0){
         if($Rol == 5){
             session_start();
-            $_SESSION['Id']=$Id;
+            
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;
@@ -69,7 +70,7 @@
         }else
         if($Rol == 3){
             session_start();
-             $_SESSION['Id']=$Id;
+            
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;
@@ -78,7 +79,7 @@
             echo 3;
         }else if($Rol == 6){
             session_start();
-             $_SESSION['Id']=$Id;
+             
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;
