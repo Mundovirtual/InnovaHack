@@ -116,6 +116,7 @@
                         </div>
                     </div>
                             <?php 
+                                /*Inicio programacíón vertical*/
                                 require_once "conexion/abrirconexion.php";
                                 $con = new Conexion();
                                 $sql = "SELECT id,Nombre,Descripcion,InfAsesoria FROM vertical";
