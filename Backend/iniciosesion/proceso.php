@@ -49,6 +49,7 @@
     	$contenido = $con->query("SELECT `Nombre`,`Apellidos`,`E-mail`,`Celular`,`Rol_idRol` FROM `comunidad` WHERE `E-mail`='$u' and `psw` = '$c'");
 
       while($row = mysqli_fetch_array($contenido)) { 
+        $Id = $row['id'];
         $nombre = $row['Nombre'];
         $apellidos = $row['Apellidos'];
         $correo = $row['E-mail'];
@@ -58,6 +59,7 @@
     	if($contenido->num_rows > 0){
         if($Rol == 5){
             session_start();
+            $_SESSION['Id']=$Id;
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;
@@ -67,6 +69,7 @@
         }else
         if($Rol == 3){
             session_start();
+             $_SESSION['Id']=$Id;
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;
@@ -75,6 +78,7 @@
             echo 3;
         }else if($Rol == 6){
             session_start();
+             $_SESSION['Id']=$Id;
             $_SESSION['activo'] =true;
             $_SESSION['nombre'] =$nombre;
             $_SESSION['Apellidos'] = $apellidos;

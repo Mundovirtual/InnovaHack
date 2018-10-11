@@ -1,3 +1,6 @@
+<?php 
+ 
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,7 @@
 	<script type="text/javascript">
 		$("#bienvenido").hide();
 	</script>
+ 
 	 <div class="row justify-content-center">
 	 	<div class="col-md-10">
 	 	<div class="card center-block">

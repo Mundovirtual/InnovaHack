@@ -1,5 +1,5 @@
 <?php 
-      	
+
      	//TODOS LOS CAMPOS SON OBLIGATORIOS
       if ($_SERVER["REQUEST_METHOD"] == "POST"){
      	if(empty($_POST['equipo'])){
@@ -35,7 +35,9 @@
      		<?php
      	}
      	else
-     	if(isset($_POST['equipo'])  && isset($_POST['proyecto']) && isset($_POST['descripcion']) isset($_POST['vertical'])){
+     	if(isset($_POST['equipo'])  && isset($_POST['proyecto']) && isset($_POST['descripcion']) &&isset($_POST['vertical'])){
+        session_start();
+        $id=$_SESSION['Id'];
      		//Conexion , registro al base de datos
  
      	}
