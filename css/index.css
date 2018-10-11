@@ -59,7 +59,7 @@ nav.navbar a.navbar-brand{
 	color: #fff;
 }
 div.contenedor #DatosImagen{
-	min-height: 400px;
+	min-height: 450px;
 }
 
 div.contenedor #DatosImagen h1.left{
@@ -231,7 +231,7 @@ div.verticales div.form-group div.titulo{
   
 }
 div.verticales div.form-group div.carousel img{
-	height: 500px;
+	height: 600px;
 }
 div.verticales div.marco{
 	width: 100%;
